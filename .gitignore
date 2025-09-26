@@ -1,0 +1,11 @@
+*.o
+*.bak
+*.old
+.*.swp
+*.orig
+*.ORIG
+*.rej
+*~
+.#*
+*#
+old/
