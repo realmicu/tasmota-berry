@@ -6,7 +6,7 @@ class HyuWS77TH
   static sname = "HYU"
   static version = "1.0.0"
   static trstr = ["Stable", "Up", "Down", ""]
-  static trarr = ["", "&uarr; ", "&darr; ", ""]
+  static trarr = ["", " &#x2197;", " &#x2198;", ""]
   static tmout_ms = 300000  # Timeout in ms (5 mins) to stop reporting stale values
   var chan, has_hum
   var raw32
@@ -47,7 +47,7 @@ class HyuWS77TH
     var msg = f"{{s}}{l} ID{{m}}0x{self.id:02X}{{e}}" ..
 	      f"{{s}}{l} Temperature{{m}}{self.temp:.1f} &deg;C{{e}}" ..
 	      (self.has_hum ? f"{{s}}{l} Humidity{{m}}{self.hum} %{{e}}" : "") ..
-	      f"{{s}}{l} Temp. trend{{m}}{self.trarr[self.trend]}{self.trstr[self.trend]}{{e}}" ..
+	      f"{{s}}{l} Temp. trend{{m}}{self.trstr[self.trend]}{self.trarr[self.trend]}{{e}}" ..
 	      f"{{s}}{l} Battery status{{m}}" .. (self.bat_ok ? "Good" : "<span style='color:orange;'>&#x26A0;</span> Low") .. "{e}" ..
 	      f"{{s}}{l} Period{{m}}{self.period} sec{{e}}" ..
 	      f"{{s}}{l} Last seen{{m}}" .. (t / 1000) .. " sec{e}"
